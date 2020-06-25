@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace Challenge_First_Contact
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
-        public Form1()
+        public Main_Form()
         {
             InitializeComponent();
         }
+
+        private void Main_Form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Main_Configuration()
+        {
+
+        }
+
     }
 }
