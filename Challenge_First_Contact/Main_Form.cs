@@ -62,7 +62,7 @@ namespace Challenge_First_Contact
 
                 Main_Grid[4, DCount].Value = Productos.Values.ElementAt(DCount).Precio;
 
-                if (Productos.Values.ElementAt(DCount).Fecha_Compra != Convert.ToDateTime("01/12/1970")) Main_Grid[5, DCount].Value = Productos.Values.ElementAt(DCount).Fecha_Compra;
+                if (Productos.Values.ElementAt(DCount).Fecha_Compra != Convert.ToDateTime("01/12/1970")) Main_Grid[5, DCount].Value = Productos.Values.ElementAt(DCount).Fecha_Compra.ToString("MM/dd/yyyy");
                 else Main_Grid[5, DCount].Value = "Fecha de compra Desconocida";
 
                 Main_Grid[6, DCount].Value = Productos.Values.ElementAt(DCount).Cantidad;
@@ -234,18 +234,25 @@ namespace Challenge_First_Contact
                     else Main_Grid[3, DCount].Value = "Propetario Desconocido";
                     Main_Grid[4, DCount].Value = Elp.Precio;
 
-                    if (Elp.Fecha_Compra != Convert.ToDateTime("01/12/1970")) Main_Grid[5, DCount].Value = Elp.Fecha_Compra;
+                    if (Elp.Fecha_Compra != Convert.ToDateTime("01/12/1970")) Main_Grid[5, DCount].Value = Elp.Fecha_Compra.ToString("MM/dd/yyyy");
                     else Main_Grid[5, DCount].Value = "Fecha de compra Desconocida";
 
                     Main_Grid[6, DCount].Value = Elp.Cantidad;
 
-                    Productos.Add(Elp.idProducto, Elp);
+                    Productos.Add(Elp.idProducto + 1, Elp);
+
+                    MessageBox.Show("Se ha guardado esta compra de la base de datos", "Registro añadido");
 
                     break;
                 case "PicEdit":
+                    // Planeaba Permitir que el usuario editara un registro ya existente y lo guardara con la misma
+                    // autoforma "AddForm" pero se me termino el tiempo
+                    //
+                    MessageBox.Show(@"Planeaba Permitir que el usuario editara un registro ya existente y lo guardara con la misma autoforma ""AddForm"" pero se me termino el tiempo");
                     break;
                 case "PicRemove":
                     if(Main_Grid.CurrentRow.Index >= 0) Main_Grid.Rows.RemoveAt(Main_Grid.CurrentRow.Index);
+                    MessageBox.Show("Se ha removido esta compra de la base de datos","Registro Removido");
                     break;
             }
 
