@@ -19,6 +19,7 @@ namespace Challenge_First_Contact
 
         public Producto()
         {
+            idProducto = 0;
             Nombre_Producto = "";
             Descripcion = "";
             Comprador = "";

@@ -12,6 +12,9 @@ namespace Challenge_First_Contact
 {
     public partial class Main_Form : Form
     {
+
+        Dictionary<int, Producto> Productos;
+
         public Main_Form()
         {
             InitializeComponent();
@@ -19,14 +22,37 @@ namespace Challenge_First_Contact
 
         private void Main_Form_Load(object sender, EventArgs e)
         {
+            Get_Data();
+            Main_Configuration();
             Dibujo_Principal();
         }
 
         private void Main_Configuration()
         {
+            Main_Grid.ColumnCount = 8;
+
+            Main_Grid.Columns[0].HeaderText = "id";
+            Main_Grid.Columns[1].HeaderText = "Producto";
+            Main_Grid.Columns[2].HeaderText = "Descripcion";
+            Main_Grid.Columns[3].HeaderText = "Comprador";
+            Main_Grid.Columns[4].HeaderText = "Propetario";
+            Main_Grid.Columns[5].HeaderText = "Precio($)";
+            Main_Grid.Columns[6].HeaderText = "Fecha de compra";
+            Main_Grid.Columns[7].HeaderText = "Cantidad";
+
+
+            Main_Grid.Columns[0].Width = 40;
+            Main_Grid.Columns[1].Width = 100;
+            Main_Grid.Columns[2].Width = 300;
+            Main_Grid.Columns[3].Width = 105;
+            Main_Grid.Columns[4].Width = 200;
+            Main_Grid.Columns[5].Width = 60;
+            Main_Grid.Columns[6].Width = 100;
+            Main_Grid.Columns[7].Width = 60;
+            
+
 
         }
-
 
         private void Dibujo_Principal()
         {
@@ -34,7 +60,7 @@ namespace Challenge_First_Contact
             Graphics Grs = Graphics.FromImage(MBackGround);
 
             Rectangle ShadowCircule_Top = new Rectangle(-50, -10, this.Width + 100, 80);
-            Rectangle Main_Rec = new Rectangle(90, 60, this.Width - 120, this.Height - 130);
+            Rectangle Main_Rec = new Rectangle(20, 60, this.Width - 60, this.Height - 130);
             Rectangle LeftHeader = new Rectangle(0, 95, 80, 70);
             Rectangle MainHeader = new Rectangle(67, 80, this.Width - 98, 70);
 
@@ -49,42 +75,42 @@ namespace Challenge_First_Contact
             pen = new Pen(Color.WhiteSmoke, 1);
             Grs.DrawRectangle(pen, Main_Rec);
 
-            // Main Tab
-            Grs.FillRectangle(brush, LeftHeader);
-            Grs.FillRectangle(brush, MainHeader);
+            //// Main Tab
+            //Grs.FillRectangle(brush, LeftHeader);
+            //Grs.FillRectangle(brush, MainHeader);
 
-            pen = new Pen(Color.Gainsboro, 6); //Color.FromArgb(236,78,8)
-            Grs.DrawLine(pen, 0, 162, 90, 162);
-            Grs.DrawLine(pen, 67, 147, this.Width - 32, 147);
-            pen = new Pen(Color.DimGray, 1);
-            Grs.DrawLine(pen, 67, 80, 67, 144);
+            //pen = new Pen(Color.Gainsboro, 6); //Color.FromArgb(236,78,8)
+            //Grs.DrawLine(pen, 0, 162, 90, 162);
+            //Grs.DrawLine(pen, 67, 147, this.Width - 32, 147);
+            //pen = new Pen(Color.DimGray, 1);
+            //Grs.DrawLine(pen, 67, 80, 67, 144);
 
-            //  -------- Draw Triangle ---------- //
+            ////  -------- Draw Triangle ---------- //
 
-            //Draw a triangle on the form.
-            //first have to define an array of points.
+            ////Draw a triangle on the form.
+            ////first have to define an array of points.
             
-            pen = new Pen(Color.Black);
-            Point[] pnt = new Point[3];
+            //pen = new Pen(Color.Black);
+            //Point[] pnt = new Point[3];
 
-            pnt[0].X = 68;
-            pnt[0].Y = 150;
+            //pnt[0].X = 68;
+            //pnt[0].Y = 150;
 
-            pnt[1].X = 89;
-            pnt[1].Y = 150;
+            //pnt[1].X = 89;
+            //pnt[1].Y = 150;
 
-            pnt[2].X = 89;
-            pnt[2].Y = 163;
+            //pnt[2].X = 89;
+            //pnt[2].Y = 163;
 
-            Grs.DrawPolygon(pen, pnt);
+            //Grs.DrawPolygon(pen, pnt);
 
             //Do a filled triangle
             //First create a brush
 
             
-            brush = new SolidBrush(Color.Black);
+            //brush = new SolidBrush(Color.Black);
 
-            Grs.FillPolygon(brush, pnt);
+            //Grs.FillPolygon(brush, pnt);
 
             // -----------------
 
@@ -95,6 +121,106 @@ namespace Challenge_First_Contact
 
             this.BackgroundImage = MBackGround;
             BackgroundImageLayout = ImageLayout.None;
+        }
+
+        private void Get_Data()
+        {
+            // Conexion SQL
+            // Ejemplo de Query para obtener los datos
+
+            /*
+             * string Query = "Select * from Tabla_Principal id,Producto, Descripcion, comprador, Propetario, Precio, Fecha, Cantidad";
+            // while Recorsed()
+                {// Llenar los registros en el diccionario en un solo ciclo
+
+                }
+            */
+
+            // Datos Ejemplo
+            Productos = new Dictionary<int, Producto>();
+            Producto Prr = new Producto()
+            {
+                idProducto = 0,
+                Nombre_Producto = "Computadora Dell",
+                Descripcion = "CPU I5 2.4Ghz 16 RAM 500HDD de tipo SSD Sin OS",
+                Comprador = "",
+                Propetario = "",
+                Precio = 200,
+                Fecha_Compra = Convert.ToDateTime("05/25/2019"),
+                Cantidad = 2
+            };
+
+            Productos.Add(Prr.idProducto, Prr);
+
+            Prr = new Producto()
+            {
+                idProducto = 1,
+                Nombre_Producto = "Diadema MPOW",
+                Descripcion = "Diadema MPOW sin adaptador USB",
+                Comprador = "",
+                Propetario = "",
+                Precio = 89,
+                Fecha_Compra = Convert.ToDateTime("02/21/2019"),
+                Cantidad = 1
+            };
+
+            Productos.Add(Prr.idProducto, Prr);
+
+            Prr = new Producto()
+            {
+                idProducto = 2,
+                Nombre_Producto = "Computadora Apple",
+                Descripcion = "Computadora Apple MAC de 2019 16 RAM Intel Core i7",
+                Comprador = "",
+                Propetario = "Osiris Lopez",
+                Precio = 89,
+                Fecha_Compra = Convert.ToDateTime(""),
+                Cantidad = 1
+            };
+
+            Productos.Add(Prr.idProducto, Prr);
+
+            Prr = new Producto()
+            {
+                idProducto = 3,
+                Nombre_Producto = "Diadema Dañada",
+                Descripcion = "Diadema Dañada MPOW sin adaptador USB",
+                Comprador = "",
+                Propetario = "Osiris Lopez",
+                Precio = 0,
+                Fecha_Compra = Convert.ToDateTime("04/21/2019"),
+                Cantidad = 0
+            };
+
+            Productos.Add(Prr.idProducto, Prr);
+
+            Prr = new Producto()
+            {
+                idProducto = 4,
+                Nombre_Producto = "Computadoras HP",
+                Descripcion = "CPU I5 1.4Ghz 4 RAM 500HDD  Windows 10 Pro En la posicion FKF01P05",
+                Comprador = "",
+                Propetario = "",
+                Precio = 0,
+                Fecha_Compra = Convert.ToDateTime("")
+            };
+
+            Productos.Add(Prr.idProducto, Prr);
+
+            Prr = new Producto()
+            {
+                idProducto = 5,
+                Nombre_Producto = "Telefono Polycom",
+                Descripcion = "",
+                Comprador = "",
+                Propetario = "Sala de Juntas Principal",
+                Precio = 0,
+                Fecha_Compra = Convert.ToDateTime("03/15/2019")
+            };
+
+            Productos.Add(Prr.idProducto, Prr);
+
+
         }
 
 
