@@ -30,13 +30,13 @@
         {
             this.Lbl1 = new System.Windows.Forms.Label();
             this.TxtProducto = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtPropetario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.MonthCalendar = new System.Windows.Forms.MonthCalendar();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,13 +62,13 @@
             this.TxtProducto.Size = new System.Drawing.Size(300, 27);
             this.TxtProducto.TabIndex = 1;
             // 
-            // textBox1
+            // TxtDescripcion
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(14, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 27);
-            this.textBox1.TabIndex = 3;
+            this.TxtDescripcion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDescripcion.Location = new System.Drawing.Point(14, 147);
+            this.TxtDescripcion.Name = "TxtDescripcion";
+            this.TxtDescripcion.Size = new System.Drawing.Size(300, 27);
+            this.TxtDescripcion.TabIndex = 3;
             // 
             // label1
             // 
@@ -80,13 +80,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Descripcion";
             // 
-            // textBox2
+            // TxtPropetario
             // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(13, 218);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 27);
-            this.textBox2.TabIndex = 5;
+            this.TxtPropetario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPropetario.Location = new System.Drawing.Point(13, 218);
+            this.TxtPropetario.Name = "TxtPropetario";
+            this.TxtPropetario.Size = new System.Drawing.Size(300, 27);
+            this.TxtPropetario.TabIndex = 5;
             // 
             // label2
             // 
@@ -98,13 +98,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Propetario";
             // 
-            // textBox3
+            // TxtCantidad
             // 
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(16, 294);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 27);
-            this.textBox3.TabIndex = 7;
+            this.TxtCantidad.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCantidad.Location = new System.Drawing.Point(16, 294);
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(100, 27);
+            this.TxtCantidad.TabIndex = 7;
             // 
             // label3
             // 
@@ -116,13 +116,13 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Cantidad";
             // 
-            // textBox4
+            // TxtPrecio
             // 
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(148, 294);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 27);
-            this.textBox4.TabIndex = 9;
+            this.TxtPrecio.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPrecio.Location = new System.Drawing.Point(148, 294);
+            this.TxtPrecio.Name = "TxtPrecio";
+            this.TxtPrecio.Size = new System.Drawing.Size(100, 27);
+            this.TxtPrecio.TabIndex = 9;
             // 
             // label4
             // 
@@ -171,6 +171,7 @@
             this.CmdSave.TabIndex = 13;
             this.CmdSave.Text = "Guardar";
             this.CmdSave.UseVisualStyleBackColor = false;
+            this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
             // 
             // AddForm
             // 
@@ -182,13 +183,13 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.MonthCalendar);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TxtPrecio);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TxtCantidad);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TxtPropetario);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtProducto);
             this.Controls.Add(this.Lbl1);
@@ -204,13 +205,13 @@
 
         private System.Windows.Forms.Label Lbl1;
         private System.Windows.Forms.TextBox TxtProducto;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtPropetario;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtPrecio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MonthCalendar MonthCalendar;
         private System.Windows.Forms.Label label5;
