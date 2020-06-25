@@ -40,9 +40,12 @@
             // 
             // Main_Grid
             // 
+            this.Main_Grid.AllowUserToAddRows = false;
+            this.Main_Grid.AllowUserToDeleteRows = false;
             this.Main_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Main_Grid.Location = new System.Drawing.Point(60, 146);
             this.Main_Grid.Name = "Main_Grid";
+            this.Main_Grid.ReadOnly = true;
             this.Main_Grid.RowHeadersVisible = false;
             this.Main_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Main_Grid.Size = new System.Drawing.Size(972, 336);
@@ -58,6 +61,7 @@
             this.PicAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicAdd.TabIndex = 1;
             this.PicAdd.TabStop = false;
+            this.PicAdd.Click += new System.EventHandler(this.PicAdd_Click);
             // 
             // PicRemove
             // 
@@ -69,6 +73,7 @@
             this.PicRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicRemove.TabIndex = 2;
             this.PicRemove.TabStop = false;
+            this.PicRemove.Click += new System.EventHandler(this.PicAdd_Click);
             // 
             // PicEdit
             // 
@@ -80,6 +85,7 @@
             this.PicEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicEdit.TabIndex = 3;
             this.PicEdit.TabStop = false;
+            this.PicEdit.Click += new System.EventHandler(this.PicAdd_Click);
             // 
             // Main_Form
             // 
