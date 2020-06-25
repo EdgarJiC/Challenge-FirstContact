@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Challenge_First_Contact
 {
-    class Producto
+    public class Producto
     {
         public int idProducto;
         public int Cantidad;

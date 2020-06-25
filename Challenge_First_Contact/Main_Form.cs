@@ -209,6 +209,38 @@ namespace Challenge_First_Contact
             switch (Pic.Name)
             {
                 case "PicAdd":
+                    
+                    AddForm addForm = new AddForm { idProd = Convert.ToInt32(Main_Grid[0, Main_Grid.Rows.Count - 1].Value.ToString()) };
+                    addForm.ShowDialog();
+
+                    Producto Elp = new Producto
+                    {
+                        idProducto = addForm.idProd,
+                        Nombre_Producto = addForm.Elprod.Nombre_Producto,
+                        Descripcion = addForm.Elprod.Descripcion,
+                        Propetario = addForm.Elprod.Propetario,
+                        Precio = addForm.Elprod.Precio,
+                        Fecha_Compra = addForm.Elprod.Fecha_Compra,
+                        Cantidad = addForm.Elprod.Cantidad
+                    };
+
+                    // Add New Row and Save it
+                    int DCount = Main_Grid.RowCount;
+                    Main_Grid.Rows.Add();
+                    Main_Grid[0, DCount].Value = Elp.idProducto + 1;
+                    Main_Grid[1, DCount].Value = Elp.Nombre_Producto;
+                    Main_Grid[2, DCount].Value = Elp.Descripcion;
+                    if (Elp.Propetario != "") Main_Grid[3, DCount].Value = Elp.Propetario;
+                    else Main_Grid[3, DCount].Value = "Propetario Desconocido";
+                    Main_Grid[4, DCount].Value = Elp.Precio;
+
+                    if (Elp.Fecha_Compra != Convert.ToDateTime("01/12/1970")) Main_Grid[5, DCount].Value = Elp.Fecha_Compra;
+                    else Main_Grid[5, DCount].Value = "Fecha de compra Desconocida";
+
+                    Main_Grid[6, DCount].Value = Elp.Cantidad;
+
+                    Productos.Add(Elp.idProducto, Elp);
+
                     break;
                 case "PicEdit":
                     break;

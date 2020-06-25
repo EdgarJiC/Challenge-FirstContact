@@ -13,7 +13,7 @@ namespace Challenge_First_Contact
     public partial class AddForm : Form
     {
 
-        Producto Elprod;
+        public Producto Elprod;
         public int idProd { get; set; } = 0;
 
         public AddForm()
@@ -36,8 +36,9 @@ namespace Challenge_First_Contact
                 Cantidad = Convert.ToInt32(TxtCantidad.Text),
                 Precio = Convert.ToInt32(TxtPrecio.Text),
                 Fecha_Compra = Convert.ToDateTime(MonthCalendar.SelectionStart),
-                idProducto = (idProd + 1)
+                idProducto = idProd
             };
+            Close();
         }
     }
 }
