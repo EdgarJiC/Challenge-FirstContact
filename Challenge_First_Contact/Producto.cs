@@ -8,14 +8,14 @@ namespace Challenge_First_Contact
 {
     class Producto
     {
-
+        public int idProducto;
+        public int Cantidad;
         public string Nombre_Producto;
         public string Descripcion;
         public string Comprador;
         public string Propetario;
         public double Precio;
         public DateTime Fecha_Compra;
-        public int Cantidad;
 
         public Producto()
         {
@@ -27,7 +27,6 @@ namespace Challenge_First_Contact
             Fecha_Compra = Convert.ToDateTime("12/31/1970");
             Cantidad = 0;
         }
-
 
     }
 }
