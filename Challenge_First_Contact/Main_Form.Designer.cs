@@ -41,7 +41,7 @@
             // Main_Grid
             // 
             this.Main_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Main_Grid.Location = new System.Drawing.Point(60, 160);
+            this.Main_Grid.Location = new System.Drawing.Point(60, 146);
             this.Main_Grid.Name = "Main_Grid";
             this.Main_Grid.RowHeadersVisible = false;
             this.Main_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -52,7 +52,7 @@
             // 
             this.PicAdd.BackColor = System.Drawing.Color.Transparent;
             this.PicAdd.Image = global::Challenge_First_Contact.Properties.Resources.View_Add2;
-            this.PicAdd.Location = new System.Drawing.Point(60, 89);
+            this.PicAdd.Location = new System.Drawing.Point(60, 105);
             this.PicAdd.Name = "PicAdd";
             this.PicAdd.Size = new System.Drawing.Size(30, 35);
             this.PicAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -63,7 +63,7 @@
             // 
             this.PicRemove.BackColor = System.Drawing.Color.Transparent;
             this.PicRemove.Image = global::Challenge_First_Contact.Properties.Resources.View_Remove;
-            this.PicRemove.Location = new System.Drawing.Point(97, 89);
+            this.PicRemove.Location = new System.Drawing.Point(97, 105);
             this.PicRemove.Name = "PicRemove";
             this.PicRemove.Size = new System.Drawing.Size(30, 35);
             this.PicRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -74,7 +74,7 @@
             // 
             this.PicEdit.BackColor = System.Drawing.Color.Transparent;
             this.PicEdit.Image = global::Challenge_First_Contact.Properties.Resources.View_edit;
-            this.PicEdit.Location = new System.Drawing.Point(133, 89);
+            this.PicEdit.Location = new System.Drawing.Point(133, 105);
             this.PicEdit.Name = "PicEdit";
             this.PicEdit.Size = new System.Drawing.Size(30, 35);
             this.PicEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

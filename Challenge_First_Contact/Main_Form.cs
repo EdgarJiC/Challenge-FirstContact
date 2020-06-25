@@ -29,28 +29,44 @@ namespace Challenge_First_Contact
 
         private void Main_Configuration()
         {
-            Main_Grid.ColumnCount = 8;
+            Main_Grid.ColumnCount = 7;
 
             Main_Grid.Columns[0].HeaderText = "id";
             Main_Grid.Columns[1].HeaderText = "Producto";
             Main_Grid.Columns[2].HeaderText = "Descripcion";
-            Main_Grid.Columns[3].HeaderText = "Comprador";
-            Main_Grid.Columns[4].HeaderText = "Propetario";
-            Main_Grid.Columns[5].HeaderText = "Precio($)";
-            Main_Grid.Columns[6].HeaderText = "Fecha de compra";
-            Main_Grid.Columns[7].HeaderText = "Cantidad";
+            Main_Grid.Columns[3].HeaderText = "Propetario";
+            Main_Grid.Columns[4].HeaderText = "Precio($)";
+            Main_Grid.Columns[5].HeaderText = "Fecha de compra";
+            Main_Grid.Columns[6].HeaderText = "Cantidad";
 
 
             Main_Grid.Columns[0].Width = 40;
             Main_Grid.Columns[1].Width = 100;
             Main_Grid.Columns[2].Width = 300;
-            Main_Grid.Columns[3].Width = 105;
-            Main_Grid.Columns[4].Width = 200;
-            Main_Grid.Columns[5].Width = 60;
-            Main_Grid.Columns[6].Width = 100;
-            Main_Grid.Columns[7].Width = 60;
-            
+            Main_Grid.Columns[3].Width = 200;
+            Main_Grid.Columns[4].Width = 60;
+            Main_Grid.Columns[5].Width = 200;
+            Main_Grid.Columns[6].Width = 60;
 
+            int DCount;
+
+            Main_Grid.Rows.Add(Productos.Count - 1);
+
+            for (DCount = 0; DCount < Productos.Count; DCount++)
+            {
+                Main_Grid[0, DCount].Value = Productos.Values.ElementAt(DCount).idProducto;
+                Main_Grid[1, DCount].Value = Productos.Values.ElementAt(DCount).Nombre_Producto ;
+                Main_Grid[2, DCount].Value = Productos.Values.ElementAt(DCount).Descripcion;
+                if (Productos.Values.ElementAt(DCount).Propetario != "") Main_Grid[3, DCount].Value = Productos.Values.ElementAt(DCount).Propetario;
+                else Main_Grid[3, DCount].Value = "Propetario Desconocido";
+
+                Main_Grid[4, DCount].Value = Productos.Values.ElementAt(DCount).Precio;
+
+                if (Productos.Values.ElementAt(DCount).Fecha_Compra != Convert.ToDateTime("01/12/1970")) Main_Grid[5, DCount].Value = Productos.Values.ElementAt(DCount).Fecha_Compra;
+                else Main_Grid[5, DCount].Value = "Fecha de compra Desconocida";
+
+                Main_Grid[6, DCount].Value = Productos.Values.ElementAt(DCount).Cantidad;
+            }
 
         }
 
@@ -143,7 +159,6 @@ namespace Challenge_First_Contact
                 idProducto = 0,
                 Nombre_Producto = "Computadora Dell",
                 Descripcion = "CPU I5 2.4Ghz 16 RAM 500HDD de tipo SSD Sin OS",
-                Comprador = "",
                 Propetario = "",
                 Precio = 200,
                 Fecha_Compra = Convert.ToDateTime("05/25/2019"),
@@ -157,7 +172,7 @@ namespace Challenge_First_Contact
                 idProducto = 1,
                 Nombre_Producto = "Diadema MPOW",
                 Descripcion = "Diadema MPOW sin adaptador USB",
-                Comprador = "",
+                
                 Propetario = "",
                 Precio = 89,
                 Fecha_Compra = Convert.ToDateTime("02/21/2019"),
@@ -171,10 +186,9 @@ namespace Challenge_First_Contact
                 idProducto = 2,
                 Nombre_Producto = "Computadora Apple",
                 Descripcion = "Computadora Apple MAC de 2019 16 RAM Intel Core i7",
-                Comprador = "",
                 Propetario = "Osiris Lopez",
                 Precio = 89,
-                Fecha_Compra = Convert.ToDateTime(""),
+                Fecha_Compra = Convert.ToDateTime("01/12/1970"),
                 Cantidad = 1
             };
 
@@ -185,11 +199,10 @@ namespace Challenge_First_Contact
                 idProducto = 3,
                 Nombre_Producto = "Diadema Dañada",
                 Descripcion = "Diadema Dañada MPOW sin adaptador USB",
-                Comprador = "",
-                Propetario = "Osiris Lopez",
+                Propetario = "",
                 Precio = 0,
                 Fecha_Compra = Convert.ToDateTime("04/21/2019"),
-                Cantidad = 0
+                Cantidad = 1
             };
 
             Productos.Add(Prr.idProducto, Prr);
@@ -199,10 +212,10 @@ namespace Challenge_First_Contact
                 idProducto = 4,
                 Nombre_Producto = "Computadoras HP",
                 Descripcion = "CPU I5 1.4Ghz 4 RAM 500HDD  Windows 10 Pro En la posicion FKF01P05",
-                Comprador = "",
                 Propetario = "",
                 Precio = 0,
-                Fecha_Compra = Convert.ToDateTime("")
+                Fecha_Compra = Convert.ToDateTime("01/12/1970"),
+                Cantidad = 1
             };
 
             Productos.Add(Prr.idProducto, Prr);
@@ -212,10 +225,10 @@ namespace Challenge_First_Contact
                 idProducto = 5,
                 Nombre_Producto = "Telefono Polycom",
                 Descripcion = "",
-                Comprador = "",
                 Propetario = "Sala de Juntas Principal",
                 Precio = 0,
-                Fecha_Compra = Convert.ToDateTime("03/15/2019")
+                Fecha_Compra = Convert.ToDateTime("03/15/2019"),
+                Cantidad = 1
             };
 
             Productos.Add(Prr.idProducto, Prr);
